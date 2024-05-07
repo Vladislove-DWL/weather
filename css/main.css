@@ -1,0 +1,191 @@
+@import "./reset.css";
+
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,700);
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* расстояние между элементами */
+    row-gap: 50px;
+}
+
+/* header */
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 15px 50px;
+    background: linear-gradient(92.7deg, #90d788 0%, #11beb8 100%), #232323;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-family: 'Rubik';
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.18;
+    text-align: center;
+    color: #fff;
+   
+
+}
+
+.form {
+    display: flex;
+    /* чтобы по краям были */
+    justify-content: space-between; 
+    width: 460px;
+    height: 54px;
+    background: white;
+    border-radius: 6px;
+
+}
+
+.input {
+    /* по умлочанию 0, если мы даем 1, то он уже растет на свободное пространство */
+    flex-grow: 1;
+    padding: 15px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1;
+    color: #000;
+
+}
+
+.btn {
+    border-radius: 6px;
+    width: 145px;
+    height: 54px;
+    background: #6531a7;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1;
+    color: white;
+
+    /* плавный переход по цвету*/
+    transition: background-color 0.2s ease-in;
+
+}
+
+.btn:hover {
+    background: #8236e5;
+}
+
+/* card */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    padding: 30px;
+    min-width: 360px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 50px 0 rgba(33, 123, 118, 0.56);
+
+}
+
+.card-city {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    color: #000;
+
+}
+
+.card-city span {
+    display: inline-block;
+    vertical-align: text-top;
+    padding: 3px 5px;
+
+    background: #8236e5;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+}
+
+/* для второй карточки, которая находится под */
+.card::before {
+    /* чтобы отобразился псевдоэлемент, нужен какой-то контент внутри */
+    content: '';
+
+    /* он по умолчанию инлайн, нужно задать блок, чтобы работала ширина и высота */
+    /* но если он абсолютно позиционирован, то сразу срабатывает дисплэй блок
+    display: block; */
+    position: absolute  ;
+    left: 10px;
+    bottom: -10px;
+    z-index: -1;
+    
+    width: calc(100% - 20px);
+    height: 100%;
+
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 50px 0 rgba(33, 123, 118, 0.56);
+}
+
+.card-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:#000
+
+
+}
+
+.card-value {
+    font-size: 92px;
+    line-height: 1;
+
+}
+
+.card-value sup {
+    font-size: 50%;
+}
+
+.card-img {
+    width: 120px;
+    height: 120px;
+    /* чтобы картинка корректно масштабировалась */
+    object-fit: cover;
+
+}
+
+.card-description{
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.footer {
+    margin-top: auto;
+    width: 100%;
+    padding: 20px 15px;
+    background: linear-gradient(92.7deg, #78bc70 0%, #0d9793 100%), #232323;
+
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    color: white
+
+
+}
+
+.footer a {
+    color: white;
+    /* чтобы не было подчеркиваний */
+    text-decoration: none;
+}
